@@ -1,3 +1,8 @@
+
+// Declare card symbols
+let cards = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o", "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
+
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -10,10 +15,9 @@
  */
 
 
-// Declare card symbols
-let cards = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o", "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
 
-// Create array to hold opened cards
+
+// Create array to hold opened cards and variables
 let openCard = [];
 let moves = 0;
 let starts = 3;
@@ -36,7 +40,7 @@ function shuffle(array) {
     return array;
 }
 
-// Create each card's HTMl
+// Created each card's HTMl
 function createCard() {
     let cardList = shuffle(cards);
     cardList.forEach(function(card) {
@@ -44,7 +48,7 @@ function createCard() {
     })
 }
 
-// Logic to find matching cards
+// My own Logic to find matching cards
 function findMatch() {
     // Show cards on click
     $(".card").on("click", function() {
@@ -99,7 +103,7 @@ function updateMoves() {
 }
 
 
-// Open popup when game is complete source: www.w3schools.com
+// Open the  popup window when game is complete source: www.w3schools.com
 function findWinner() {
 
     if (matchFound === 8) {
@@ -127,18 +131,18 @@ function findWinner() {
     }
 }
 
-// Reset openCard.length to 0
+// function to Reset openCard.length to 0
 function removeOpenCards() {
     openCard = [];
 }
 
-// Remove all classes except "match"
+// Remove all classes unless they are a match
 function removeClasses() {
     $(".card").removeClass("show open flipInY bounceIn shake wrong");
     removeOpenCards();
 }
 
-// Disable clicks
+//  Used to disable clicks after a matched card
 function disableClick() {
     openCard.forEach(function (card) {
         card.off("click");
