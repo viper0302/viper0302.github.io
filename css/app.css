@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../../Justins-Memory-Game/img/light-winter.jpeg');
+    background: #ffffff url('../img/light-winter.jpeg');
     font-family: 'Coda', cursive;
     color: #393939;
 }
